@@ -29,6 +29,7 @@ For big vehicles such as trucks and buses, we have separate models for passenger
 ### Motion Classifier
 
 The motion classifier uses the aleatoric uncertainties provided by the object detector, groups them into one observation window for each object and calculates the probability of a mean shift within the window using the two-sided z-test on x and y locations. If an object is deemed static, the classifier resets the tracker's velocity state variables to zero and smoothes the location by computing an average over the observation window.
+Using the motion classifier requires manual tuning of the z-score thresholds. However, the standard values in the config files deliver satisfying results for a wider range of input data.
 
 
 ## Inputs / Outputs

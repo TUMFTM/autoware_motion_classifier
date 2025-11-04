@@ -6,11 +6,9 @@ This repository provides an uncertainty-aware motion classifier for the Autoware
 
 The implementation is designed for deployment efficiency:
 
-Reuses Autoware’s existing data association from the tracker
-
-Passes uncertainty estimates via standard covariance fields
-
-Adds minimal computational overhead and requires no retraining on large datasets
+- Reuses Autoware’s existing data association from the tracker
+- Passes uncertainty estimates via standard covariance fields
+- Adds minimal computational overhead and requires no retraining on large datasets
 
 Empirical evaluation shows parity with velocity thresholding on nuScenes, but a significant reduction in false dynamic predictions and unnecessary stops during real-world test drives — especially in the “jitter band” of ambiguous detections that speed-only rules misclassify.
 
