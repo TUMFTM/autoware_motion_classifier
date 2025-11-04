@@ -92,10 +92,7 @@ Model performance:
 
 ## Deploying CenterPoint model to Autoware
 
-#### Convert CenterPoint PyTorch model to ONNX Format
-
-The autoware_lidar_centerpoint implementation requires two ONNX models as input the voxel encoder and the backbone-neck-head of the CenterPoint model. Other aspects of the network,
-such as preprocessing operations, are implemented externally. 
+The model files for our uncertainty-aware CenterPoint network are provided under `./uncertainty_centerpoint_model`
 
 #### Create the config file for the custom model
 
