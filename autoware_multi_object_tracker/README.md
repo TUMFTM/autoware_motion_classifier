@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# autoware_motion_classifier
-The motion classifier classifies objects into static and dynamic, threby suppressing falsely predicted trajectories of static objects.
-=======
 # multi_object_tracker
 
 ## Purpose
@@ -34,25 +30,6 @@ For big vehicles such as trucks and buses, we have separate models for passenger
 
 The motion classifier uses the aleatoric uncertainties provided by the object detector, groups them into one observation window for each object and calculates the probability of a mean shift within the window using the two-sided z-test on x and y locations. If an object is deemed static, the classifier resets the tracker's velocity state variables to zero and smoothes the location by computing an average over the observation window.
 
-<!-- Write how this package works. Flowcharts and figures are great. Add sub-sections as you like.
-
-Example:
-  ### Flowcharts
-
-  ...(PlantUML or something)
-
-  ### State Transitions
-
-  ...(PlantUML or something)
-
-  ### How to filter target obstacles
-
-  ...
-
-  ### How to optimize trajectory
-
-  ...
--->
 
 ## Inputs / Outputs
 
@@ -88,6 +65,15 @@ Multiple inputs are pre-defined in the input channel parameters (described below
 
 {{ json_to_markdown("perception/autoware_multi_object_tracker/schema/simulation_tracker.schema.json") }}
 
+## Build
+
+```bash
+source /opt/ros2/humble/setup.bash
+cd /YOUR/AUTOWARE/PATH/Autoware
+source install/setup.bash
+colcon build --packages-select autoware_lidar_centerpoint
+```
+
 ## Assumptions / Known limits
 
 See the [model explanations](models.md).
@@ -105,4 +91,3 @@ This package makes use of external code.
 Min-cost Flow Algorithm for Multi-object Tracking,” NeurIPS, 2019
 
 
->>>>>>> 21298b5 (Initial)
