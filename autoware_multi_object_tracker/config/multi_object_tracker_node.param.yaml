@@ -1,0 +1,39 @@
+/**:
+  ros__parameters:
+    # default tracker models for each class
+    car_tracker: "multi_vehicle_tracker"
+    truck_tracker: "multi_vehicle_tracker"
+    bus_tracker: "multi_vehicle_tracker"
+    trailer_tracker: "multi_vehicle_tracker"
+    pedestrian_tracker: "pedestrian_and_bicycle_tracker"
+    bicycle_tracker: "pedestrian_and_bicycle_tracker"
+    motorcycle_tracker: "pedestrian_and_bicycle_tracker"
+
+    # default tracker node parameters
+    publish_rate: 10.0
+    world_frame_id: map
+    enable_delay_compensation: false
+    consider_odometry_uncertainty: false
+
+    # default object uncertainty for motion classification
+    consider_statistical_motion: true
+    log_z_scores: false
+    variance_lower_bound: 1e-4
+    observation_window_size: 10
+    minimum_window_size_for_z_test: 2
+    z_score_threshold:
+      unknown: 1.96
+      car: 2.58
+      truck: 2.58
+      bus: 2.58
+      trailer: 1.64
+      motorcycle: 1.96
+      bicycle: 1.64
+      pedestrian: 1.28
+
+    # debug parameters
+    publish_processing_time: false
+    publish_tentative_objects: false
+    publish_debug_markers: false
+    diagnostics_warn_delay: 0.5 # [sec]
+    diagnostics_error_delay: 1.0 # [sec]
